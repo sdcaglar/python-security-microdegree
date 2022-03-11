@@ -18,3 +18,13 @@
     - Demonstrate the way of string
 - 03 | Conclusion
     - Hands on practice about the pythonic string formatting
+
+
+### 1.3 - Regular Expressions
+
+- 01 | Building blocks
+    - There module of python
+- 02 | Developing the script
+    - Demonstrate common ways of regular expressions
+- 03 | Conclusion
+    - Regexp professional not afraid of anything
