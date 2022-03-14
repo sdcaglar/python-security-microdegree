@@ -9,6 +9,7 @@
 - 03 | Conclusion
     - Overview of docstrings and comments
 
+
 ### 10.2 - Sphinx Setup
 
 - 01 | Building blocks
@@ -20,12 +21,40 @@
 
 #### Commands used in chapters
 ```
-python3 -m venv env
-pip3 install sphinx
-mkdir sphinx-demo
 cd sphinx-demo
+python3 -m venv env
+source env/bin/activate
+pip3 install sphinx
 sphinx-quickstart .
 make html
 build/html/index.html
 google-chrome build/html/index.html
 ```
+
+### 10.3 - Sphinx Example
+
+- 01 | Building blocks
+    - Project setup, module creation
+- 02 | Developing the script
+    - Generating documentation with spinx and
+    docstrings and customizing them
+- 03 | Conclusion
+    - Fully fledged documentation
+
+#### Commands used in chapters
+```
+cd TestModule
+python3 -m venv env
+source env/bin/activate
+pip3 install sphinx_rtd_theme
+cd docs
+make clean
+sphinx-build -t html source build
+google-chrome build/index.html
+```
+
+### Helpful Resources
+
+[Spinx (Python Document Generator)](https://www.sphinx-doc.org/en/master/)
+
+[Spinx Themes](https://www.writethedocs.org/guide/tools/sphinx-themes/?highlight=sphinx)
