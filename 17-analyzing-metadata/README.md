@@ -24,3 +24,32 @@ pip3 install pdfminer
 python3 pdf_reader.py lorem-ipsum.pdf -t
 python3 pdf_reader.py lorem-ipsum.pdf -m
 ```
+
+### 17.2 - Extracting Photo Data
+
+- 01 | EXIF
+    - Digital cameras include a lot of metadata by default.
+- 02 | Security Issues
+    - EXIF data can leak potentially sensitive information,
+      such as PII, location information, etc.
+- 03 | Data Extraction
+    - Web sites, browser plugins and simply programs can extract
+      EXIF data from images.
+      
+#### Extracting Metadata from Photos
+EXIF (Exchangeable Image File Format) is most common metadata
+associated with digital photos.
+
+EXIF data includes ISO speed, shutter speed, aperture, white
+balance, camera make and model, etc.
+
+Embedded within the image file itself, i.e. not part of the image
+but part of the file's data. Data can be modified or deleted to keep
+file sizes small, protect IP associated with the image, remove sensitive
+information like GPS coordinates, etc.
+```
+python3 -m venv env
+source env/bin/activate
+pip3 install exif
+python3 exif_metadata.py
+```
