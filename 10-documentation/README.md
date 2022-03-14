@@ -30,6 +30,8 @@ make html
 build/html/index.html
 google-chrome build/html/index.html
 ```
+#### A Section of The Project View 
+![sphinx example](10.2.png)
 
 ### 10.3 - Sphinx Example
 
@@ -52,6 +54,8 @@ make clean
 sphinx-build -t html source build
 google-chrome build/index.html
 ```
+#### A Section of The Project View 
+![sphinx template example](10.3.png)
 
 ### Helpful Resources
 
