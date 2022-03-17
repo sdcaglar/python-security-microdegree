@@ -47,9 +47,59 @@ Embedded within the image file itself, i.e. not part of the image
 but part of the file's data. Data can be modified or deleted to keep
 file sizes small, protect IP associated with the image, remove sensitive
 information like GPS coordinates, etc.
+
+#### Commands used in chapters
 ```
 python3 -m venv env
 source env/bin/activate
 pip3 install exif
 python3 exif_metadata.py
 ```
+### 17.3 - Extracting Metadata from MP3
+
+- 01 | Audio Files
+    - MP3 are the classic digital audio file, so there is a lot of
+      support for them. Newer or less common files aren't as well
+      supported.
+- 02 | Security Issues
+    - MP3 metadata is not locked down, so potentially any text
+      information could be included in the tags.
+- 03 | Data Extraction
+    - The wide support for MP3 files in nearly any digital audio
+      application, from video games to media players, means it is
+      easy to access and update MP3 metadata.
+
+Depending on the data that was embedded in the music file, there
+can be a wide variety of information available.
+  *  Song title
+  *  Artist
+  *  Album
+  *  Recording data
+  *  Track and disc number
+
+#### eyeD3 program
+The python program eyeD3 allows analysis of audio files, specifically MP3
+files with ID3 tags embedded within the file.
+
+It provides a command-line tool (eyeD3) and a Python library (import eyeD3)
+that can be used to write your own applications or plugins that are callable
+from the command-line tool.
+
+It not only reads the data, but also allows you to write the data. Therefore
+you can programmatically modify or update your music library.
+
+Plugins are supported as well. Actually the entire program is based on plugins.
+If no plugin is specified, the default "classic" tag plugin is called.
+
+#### Commands used in chapters
+```
+python3 -m venv env
+source env/bin/activate
+pip3 install eyeD3
+eyeD3 human.mp3
+eyeD3 --help
+```
+
+### Helpful Resources
+
+[eyeD3 Documentation](https://eyed3.readthedocs.io/en/latest/)
