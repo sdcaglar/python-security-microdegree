@@ -169,7 +169,7 @@ to the affected function.
 @dec2
 def func8):
 ...
-is equivalent to
+is equivalent to 
 def func():
 ...
 func = dec1(dec2(func))
@@ -211,3 +211,43 @@ attributes or for use in the actual decorator the callable it returns or both.
 
 Decorator arguments are often used to provide attribute initialization values, call
 trace message labels, names to be validated etc.
+
+### 7.3 - Decorator Examples
+
+- 01 | Function Decorators
+    - Decorators  can be applied to functions or methods
+- 02 | Class Decorators
+    - Decorators  can be applied to instances or classes.
+- 03 | Problems
+    - Use of decorators requeires knowledge of limitations.
+
+#### Class Singleton
+The first instance created is the only object 
+available for a class.
+
+Attemting to create a new instance is simply ignored, though the instance name 
+still exists. When the new instance is called, the data returned is for the first
+original instance. 
+
+#### Function Call Tracing
+The program in the next window uses a decorator to count the number of calls to
+the decorated function and prints the number of total calls made after each call.
+
+The decorator is generalized for use with nearly any function, as each decorated
+function creates a new instance with its own parameters.
+  * The *args argument allows any number of arguments to be passed in, with
+    specification within the decorator. Any defined function can specify how many
+    arguments to accept, however.
+
+#### Decorator Drawbacks
+Type Changes
+  * Attempting to type check when wrappers are inserted can cause issues, as the
+    decorated object doesn't retain its original type. The type changes to the
+    wrapper object, which can affect programs that use object names or type for
+    functionality.
+Extra Calls
+  * Decoration wrappers introduce additional latency in performance, as an extra
+    call is generated each time the decorated object is called.
+Always Present
+  * Decorators are applied to every later call to a function/class. Selective
+    decoration is not available.
