@@ -251,3 +251,17 @@ Extra Calls
 Always Present
   * Decorators are applied to every later call to a function/class. Selective
     decoration is not available.
+
+##### Examples
+
+* [singleton.py ](singleton.py)
+* [tracing_calls.py ](tracing_calls.py)
+
+### 7.4 - Decorators in Use
+
+Real World Examples
+
+* [timer.py](timer.py)
+* [arg_checker.py](arg_checker.py)
+* [decorator_params.py](decorator_params.py)
+* [wrapper.py](wrapper.py)
