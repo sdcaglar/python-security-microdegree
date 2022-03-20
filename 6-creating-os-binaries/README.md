@@ -107,3 +107,28 @@ Computing resources are available via any Internet connection
 Hardware and software administration is typically outsourced to a third party
 
 Systems can dynamically scale as necessary, ensuring resources are always available
+
+### 6.1 - Execution Code
+
+- 01 | Compiling
+    - Fastes execution time but compilation step can slow overall development
+- 02 | Interpretation
+    - Can be slower than compiled code, but quicker to program
+
+- Compilation: Converting source code directly into machine code
+- Interpretation: Converting source code to bytecode, then to machine code
+
+#### Compilation Process
+
+Translates source code to machine-readable code
+* Step # 01: Generate source code
+* Step # 02: Convert to non-optimized intermediate code
+* Step # 03: Optimize intermediate code
+* Step # 04: Translate intermediate code to target's machine code
+
+#### Interpretation Process
+
+Convert from source code to portable code
+* Step # 01: Generate source code
+* Step # 02: Convert from source code to bytecode
+* Step # 03: Process bytecode in interpreter virtaul machine
