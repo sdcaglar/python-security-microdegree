@@ -217,7 +217,7 @@ The dis library is used to view bytecode.
 
 The ```__code__``` attribute is used to view bytecoode objects.
 
-![__code__ attribute](ode-attribute.png)
+![__code__ attribute](code-attribute.png)
 
 #### Why it's Useful
 Knowing bytecode allows you to anticipate what your source code will become,
