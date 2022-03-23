@@ -268,3 +268,48 @@ Knowing how stack-oriented programming works broadens your knowledge.
 #### CPU Cache
 
 ![CPU Cache](cpu-cache.png)
+
+### 6.6 - Operating System Comparison
+
+- 01 | Windows
+    - Approxç 83% market share
+- 02 | macOS
+    - Approxç 13% market share
+- 03 | Linux
+    - Approxç 2% market share (best guess)
+
+#### Architecture Comparison
+
+![Architecture Comparison](architecture-comparison.png)
+
+#### Windows NT Kernel
+Hybrid structure
+  * Simple kernel
+  * H/w Abstraction Layer
+  * Services (Executive)
+
+User Mode-Limited Access
+
+Kernel Mode-Unrestricted Access
+
+#### macOS XNU Kernel
+Hybrid structure
+  * Mach (OSF) microkernel
+    * Device driver framework
+  * FreeBSD kernel
+    * POSIX API calls
+
+Drivers can run in user-space; a crash won't kill kernel.
+
+Kernel drivers will kill kernel if crashed. Examples: USB, graphics, VM, etc.
+
+#### Linux Kernel
+Monolithic structure
+
+User Mode
+  * applications
+  * Low-level system components
+  * POSIX API
+Kernel Mode
+  * Device drivers
+  * Kernel extensions
