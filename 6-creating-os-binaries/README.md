@@ -108,7 +108,7 @@ Hardware and software administration is typically outsourced to a third party
 
 Systems can dynamically scale as necessary, ensuring resources are always available
 
-### 6.1 - Execution Code
+### 6.2 - Execution Code
 
 - 01 | Compiling
     - Fastes execution time but compilation step can slow overall development
@@ -132,3 +132,98 @@ Convert from source code to portable code
 * Step # 01: Generate source code
 * Step # 02: Convert from source code to bytecode
 * Step # 03: Process bytecode in interpreter virtaul machine
+
+### 6.3 - Understanding Python Bytecodes
+
+- 01 | Python Interpreter
+    - Converts source code to architecture-independent bytecode
+- 02 | Bytecode
+    - Utilizes stacks to process each Python function call
+
+#### Python .pyc Files
+
+.pyc files are Python's bytecode-compiled files
+
+They are made from source code files
+
+Save time by preventing Python from re-parsing source code every time (unless
+something is changed)
+
+#### How Python Works
+
+Python converts source code to bytecode for use in a virtaul machine (the interpreter)
+
+When first ran, .py files are converted into bytecode .pyc file
+
+.pyc files are first accessed (if available) when a Python program is ran. If not
+available or the data in the source code has changed, the .py file is re-processed
+into a new .pyc file
+
+#### A Look at Bytecode
+
+The Python program below:
+```
+def hello():
+  print("Hello, World!")
+```
+becomes the bytecode below:
+```
+2        0 LOAD_GLOBAL       0 (print)
+         2 LOAD_CONST        1 ("Hello, World!")
+         4 CALL_FUNCTION     1
+```
+#### Python stacks
+
+Python uses a stack-based VM
+  * Call stack: One "frame" for each active function call; bottom of the stack is
+    the entry point of the program. Each function call pushes a new frame to the
+    stack and each function return pops a frame off.
+  * Evaluation stack: Each frame has a data avaluation stack, where function
+    execution occurs. Items are pushed to stack, manipulated and popped off.
+  * Block stack: Each frame also has a block stack, used to track control
+    structures like loops and try/except blocks. Ensures Python knows which control
+    structure is currently operating.
+
+#### Converting to Bytecode
+
+We call the function my_funct(arg1, 4)
+
+The interpreter performs the following:
+  * LOAD_NAME instruction looks for the my_funct object and pushes it to the top
+    of the evaluation stack
+  * Another LOAD_NAME looks up the variable arg1 and pushes it to the evaluation
+    stack
+  * A LOAD_CONST instruction pushes the literal integer 4 to the evaluation stack
+  * A CALL_FUNCTION instruction is processed
+
+
+##### CALL_FUNCTION
+The CALL_FUNCTION and its sibling CALL_FUNCTION_KW are used to process arguments
+or keyword arguments, respectively.
+
+In the previous example, the function had two arguments, so CALL_FUNCTION will
+have to pop two argument values from the stack, followed by the function call itself.
+
+A new frame is added to the call stack, filled with function variables and the
+bytecode of the function itself is executed.
+
+When finished, the frame is popped from the call stack and the original function
+call frame, filled with the return value is pushed to the evaluation stack.
+
+#### Viewing Bytecode
+The dis library is used to view bytecode.
+
+![Viewing Bytecode](dif.png)
+
+The ```__code__``` attribute is used to view bytecoode objects.
+
+![__code__ attribute](ode-attribute.png)
+
+#### Why it's Useful
+Knowing bytecode allows you to anticipate what your source code will become,
+allowing better optimization.
+
+You can read the actual code to see why certain Python constructs are better
+choices than others.
+
+Knowing how stack-oriented programming works broadens your knowledge.
