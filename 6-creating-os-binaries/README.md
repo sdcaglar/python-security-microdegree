@@ -215,7 +215,7 @@ The dis library is used to view bytecode.
 
 ![Viewing Bytecode](dif.png)
 
-The ```__code__``` attribute is used to view bytecoode objects.
+The ```__code__``` attribute is used to view bytecode objects.
 
 ![__code__ attribute](code-attribute.png)
 
@@ -227,3 +227,21 @@ You can read the actual code to see why certain Python constructs are better
 choices than others.
 
 Knowing how stack-oriented programming works broadens your knowledge.
+
+
+### 6.4 - BIOS/UEFI
+
+- 01 | BIOS
+- 02 | UEFI
+
+#### BIOS (Basic Input/Output System)
+
+![BIOS](bios.png)
+
+#### UEFI (Unified Extensible Firmware Interface)
+
+![uefi advantages](uefi-advantages.png)
+
+#### Summary
+
+![BIOS/UEFI](bios-uefi.png)
