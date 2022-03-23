@@ -245,3 +245,26 @@ Knowing how stack-oriented programming works broadens your knowledge.
 #### Summary
 
 ![BIOS/UEFI](bios-uefi.png)
+
+### 6.5 - CPU Characteristics
+
+- 01 | CPUs Evaluation
+    - Single-thread performance has leveled off, so multithreaded performance is
+      current emphasis 
+- 02 | CPU Bit Size
+    - Larger bit sizes means more data can be processed at one time. Doesn't
+      necessarily equate to h/w access.
+- 03 | Cache
+    - Keeping the CPU full of data is key to performance.
+
+#### The Path to 32-bit Systems
+
+![CPU & os Improvements](32-bit-systems.png)
+
+#### CPU Components
+
+![CPU Components](cpu-components.png)
+
+#### CPU Cache
+
+![CPU Cache](cpu-cache.png)
