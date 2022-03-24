@@ -41,3 +41,27 @@ openssl req -new -x509 -nodes -out EC.pem -keyout EC.key
 #### Run Project (server.py, client.py)
 
 ![Server - Client Program](run-server-client.png)
+
+### 14.4 - Encryption RSA
+
+- 01 | Building blocks
+    - Cryptography module
+    - base64 internal and cryptography external modules
+- 02 | Developing the script
+    - Implementing RSA
+    - Basic concepts of the RSA encryption and some OOP
+- 03 | Conclusion
+    - Cryptography at it's fine
+    - Secure implementation, portable interface
+
+#### Commands used in chapters
+```
+python3 -m venv env
+source env/bin/activate
+pip3 install cryptography
+python3 rsa.py
+```
+
+### Helpful Resources
+
+[pyca/cryptography](https://cryptography.io/en/latest/)
