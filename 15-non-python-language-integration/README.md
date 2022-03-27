@@ -47,11 +47,11 @@ python3 setup.py build_ext --inplace
 python3
 import factorial
 print(factorial.get_modulus(5))
-120
+# output = 120
 print(factorial.get_modulus(5, 2))
-1
+# output = 1
 print(factorial.cvar.pi_var)
-3.14
+# output = 3.14
 ```
 
 #### Summary
@@ -63,6 +63,91 @@ Uses
 Process
   - Import SWIG; write C code; write interface file, generate Python files
 
-### Helpful Resources
+#### Helpful Resources
 
 [Wrapping C/C++ for Python using SWIG)](https://www.geeksforgeeks.org/wrapping-cc-python-using-swig-set-1/?ref=gcse)
+
+### 15.2 - Cython
+
+- 01 | Cython Use
+    - Use normal Python code to create C code
+- 02 | Data Types
+    - C-specific data types can be declarated, allowing mixing of Python and C types
+- 03 | pyximport
+    - For simple conversions, pyximport can be used to automatically load files
+- 04 | C/C++
+    - Both C and C++ code can be utilized, with the correct libraries
+
+#### Cython Basics
+
+![Cython Basics](cython-basics.png)
+
+#### Cython Process
+
+![Cython Process](cython-process.png)
+
+#### pyximport
+
+pyximport module loads .pyx files directly on import
+
+Does not require running setup.py with every code chanfe
+  * Only useful when no extra C libraries or special build setup required
+Built into Cython
+
+Not recommended to use pyximport on the user's system, due to the hooks into the
+import system
+  * Users are better served with Python wheels with the pre-built Cython binaries
+    included
+
+#### Commands used in chapters
+```
+cd cython
+python3 -m venv env
+source env/bin/activate
+pip3 install Cython
+python3 setup_hello.py build_ext --inplace
+
+python3
+import helloworld
+# output = Hello World!
+Ctrl + D
+
+python3 setup_fibo.py build_ext --inplace
+
+python3
+import fib
+fib.fib(9)
+# output = 1
+           1
+           2
+           3
+           5
+           8
+Ctrl + D
+
+python3 setup_primes.py build_ext --inplace
+
+python3
+import primes
+primes.primes(50)
+# output = >>> primes.primes(50)
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,71, 73, 79,
+83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167,
+173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229]
+Ctrl + D
+
+python3 setup_cpp.py build_ext --inplace
+
+python3
+import primes_cpp
+primes_cpp.primes_cpp(50)
+# output = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
+71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157,
+163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229
+Ctrl + D
+```
+
+#### Helpful Resources
+
+[Cython Tutorial)](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html)
+[Fibonacci Series](https://www.programmingsimplified.com/c-program-generate-fibonacci-series)
