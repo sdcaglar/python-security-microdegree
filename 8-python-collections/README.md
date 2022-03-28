@@ -220,3 +220,33 @@ python3 defaultdict_set.py
 python3 defaultdict_list.py
 # output: [('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
 ```
+
+### 8.4 - UserDict
+
+- 01 | UserDict
+    - Largely deprecated except for legacy support
+- 02 | Dictionary access
+    - ```data``` attribute provides access to underlying dictionary
+- 03 | Data
+    - Accessed like a dictionary but return object is actual dictionary object,
+      not tuple of key:value pairs
+
+#### UserDict
+
+* Wrapper to dict class that makes it easier to subclass dict
+* Primarly used for backwards-compatibility as UserDict simulates a dictionary,
+  with the contents available via UserDict.data
+* Since normal dictionaries can now be subclassed, this collection is largely
+  deprecated for most programs
+
+#### Commands used in chapter
+```
+python3 userdict.py
+#output = {'a': 1}
+          {'d': 3}
+          {'a': 1}
+          d 3
+          a 1
+          dict_items([('d', 3)])
+          ItemsView({'a': 1})
+```
