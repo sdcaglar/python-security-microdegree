@@ -130,7 +130,7 @@ python3 setup_primes.py build_ext --inplace
 python3
 import primes
 primes.primes(50)
-# output = >>> primes.primes(50)
+# output = primes.primes(50)
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,71, 73, 79,
 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167,
 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229]
@@ -151,3 +151,51 @@ Ctrl + D
 
 [Cython Tutorial)](https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html)
 [Fibonacci Series](https://www.programmingsimplified.com/c-program-generate-fibonacci-series)
+
+### 15.3 - Calling Go Functions
+
+- 01 | Golang
+    - Machine-code compiled language that improves on C language
+- 02 | Python Integration
+    - Converting Go code to C-style shared libraries allows Python to utilize
+      Go functions
+- 03 | Requirements
+    - Currently, there are some specific requirements to integrate Go into Python
+
+#### Go Language
+Feels like Python mixed with C
+  * Syntactically similar to C but includes Python-like features
+With v1.5, Go compiler introduced -buildmode flag
+  * Flag allows compilation of Go code to other formats, including C shared
+    libraries
+C shared library versions of Go can be integrated into Python like normal C-style
+APIs
+
+#### Requirements
+To compile Go code to shared library, the following requirements must be met
+  * Go package must be a __main__ package. The package and all dependencies will
+    be put into a single binary shared project
+  * Source must import the pseudo-package "C"
+  * The //export comment can annotate functions that should be made accessible
+    to other languages
+  * An empty main function must be declared
+
+#### Commands used in chapters
+```
+cd go_python
+sudo apt install golang-go
+python3 -m venv env
+source env/bin/activate
+go build -o awesome.so -buildmode=c-shared awesome.go
+
+python3 client.py
+# output = awesome.Add(12,99) = 111
+           awesome.Cosine(1) = 0.540302
+           awesome.Sort(74,4,122,9,12) = [4, 9, 12, 74, 122]
+           Hello Python!
+           log id 1
+```
+
+#### Helpful Resources
+
+[Go Programming)](https://medium.com/learning-the-go-programming-language/calling-go-functions-from-other-languages-4c7d8bcc69bf)
