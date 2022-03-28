@@ -176,3 +176,47 @@ python3 ordereddict.py
            pear
            banana
 ```
+
+### 8.3 - DefaultDict
+
+- 01 | defaultdict
+    - Handles missing values to prevent errors
+- 02 | Methods
+    - ```missing()``` and __default_factory handle default conditions for
+      missing values
+- 03 | Examples
+    - Demonstrated how defaultdict can be used in a variety of situations
+
+#### DefaultDict
+
+* Creates a factory function to provide missing values
+* If a dictionary item doesn't exists, it will create a default item when called
+* Helps prevent KeyError exceptions when accessing a non-existent key
+
+#### DefaultDict Methods
+
+* ```__missing__(key)```: This method is used by the dict class ```__getitem__()```
+  method when the requested key is not found. Whatever key it returns (or an
+  exception if no key is present) is passed to ```__getitem__()```, which processes
+  it accordingly.
+* ```__default_factory```: While not a method, it is used as an attribute for
+  the ```__missing__()``` method, it is initialized by the first argument to the
+  dictionary constructor, if available; defaults to None if no argument is provided.
+
+#### Commands used in chapters
+```
+python3 defaultdict.py
+# output = [('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
+
+python3 defaultdict_counter.py
+# output: [(' ', 2), ('A', 1), ('M', 1), ('a', 4), ('b', 1), ('d', 1), ('i', 4), ('l', 1), ('m', 1), ('n', 1), ('p', 2), ('s', 4)]
+
+python3 defaultdict_lambda.py
+# output: Marry ran to <value_unknow>
+
+python3 defaultdict_set.py
+# output: [('apple', {1}), ('banana', {3, 4}), ('carrot', {1, 3})]
+
+python3 defaultdict_list.py
+# output: [('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
+```
