@@ -250,3 +250,21 @@ python3 userdict.py
           dict_items([('d', 3)])
           ItemsView({'a': 1})
 ```
+
+### 8.5 - UserList
+
+- 01 | UserList
+    - Wrapper around lists for new functionally
+- 02 | Deprecated
+    - Ability to subclass normal lists means UserList is largely unnecessary
+- 03 | Data
+    - Like UserDict, a data attribute holds the underlying list object contents
+
+#### UserList
+
+* Similar to UserDict, except it applies to lists rather than dictionaries
+* Primarly used to create a base class for list-like subclasses
+  - Allows for inheritance, method overriding and new methods to provide new
+    functionally to lists
+* Largely deprecated due to normal lists allowing subclassing now
+  - Still useful as it is sometimes easier to use UserList than subclass list
