@@ -268,3 +268,49 @@ python3 userdict.py
     functionally to lists
 * Largely deprecated due to normal lists allowing subclassing now
   - Still useful as it is sometimes easier to use UserList than subclass list
+
+#### Commands used in chapter
+```
+python3 userlist.py
+# output
+Unmodified list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Modified last value: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Modified index 2: [0, 1, 42, 3, 4, 5, 6, 7, 8, 9, 10]
+Traceback (most recent call last):
+  File "/home/sedacaglar/Desktop/mygithub/python-security-microdegree/8-python-collections/userlist.py", line 25, in <module>
+    ext_list[12] = 90 # Accessing index beyond list length results in error
+  File "/home/sedacaglar/Desktop/mygithub/python-security-microdegree/8-python-collections/userlist.py", line 13, in __setitem__
+    self.data[key] = value
+IndexError: list assignment index out of range
+```
+
+### 8.6 - UserString
+
+- 01 | UserString
+    - Largely deprecated except for legacy support
+- 02 | Object class
+    - "data" attribute provides access to underlying string object
+- 03 | Use
+    - Allows functionality enhancement for strings, such as providing other
+      sequence methods
+
+#### UserString
+
+* Wrapper to string class that makes it easier to subclass strings
+* Primarly used for backwards-compatibility
+* Since normal string class can now be subclassed, this collection is largely
+  deprecated for most programs
+  - Also useful when subclassing string is too much work for a simple project
+* Like UserDict and UserList, a data attribute is used to access the underlying
+  string object
+
+#### Commands used in chapter
+```
+python3 userstring.py
+# output
+banana-fosterspam and pineapples
+Traceback (most recent call last):
+  File "/home/sedacaglar/Desktop/mygithub/python-security-microdegree/8-python-collections/userstring.py", line 15, in <module>
+    new_s.append("apples") # Normal strings don't have append() function
+AttributeError: 'str' object has no attribute 'append'
+```
