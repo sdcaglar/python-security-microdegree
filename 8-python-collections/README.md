@@ -133,4 +133,46 @@ Containers that have associated Collections
 * remove(elem): This deletes elem from the set; it throws an exception if elem
   is not present
 * discard(elem): This deletes elem from the set if present
- 
+
+### 8.2 - OrderedDict
+
+- 01 | OrderedDict
+    - Largely deprecated in Python 3.7
+- 02 | Methods
+    - Three OrderedDict methods are still useful
+- 03 | Examples
+    - Demonstrated how normal dictionaries compare to OrderedDict collection
+
+#### OrderedDict
+
+Mostly redundant as of Python 3.7
+  * Normal dictionaries automatically implement insertion order preservation
+The methods of OrderedDict are still useful, as regular dictionaries don't include
+them
+
+#### OrderedDict Methods
+
+* popitem(last=True): It returns and removes the key:value pair at the end of the
+  dictionary. If last is not provided or manually set to True, then the popped
+  value is LIFO (last in, first out). If last is set to False, then the popped
+  value is FIFO.
+* move_to_end(key, last=True): It moves the provided key to the end of the dictionary.
+  If last is set to True, then the key moves to the right. If last is set to False,
+  the key is sent to the front. If the key does not exist, an error is generated
+* reversed(): Since OrderedDict objects are in order, they can be manipulated like
+  an iterable object; in this case reverse iteration can be performed on an OrderedDict
+
+#### Commands used in chapters
+```
+python3 ordereddict.py
+# output = Normal dict: {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
+           Pop last item: ('orange', 2)
+           Invalid method call
+           OrderedDict([('banana', 3), ('apple', 4), ('pear', 1), ('orange', 2)])
+           OrderedDict([('banana', 3), ('apple', 4), ('pear', 1), ('orange', 2)])
+           Print dict: OrderedDict([('banana', 3), ('pear', 1), ('orange', 2), ('apple', 4)])
+           apple
+           orange
+           pear
+           banana
+```
