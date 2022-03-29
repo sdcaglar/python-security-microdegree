@@ -41,3 +41,34 @@ Process Bob is counting down: 2...
 Process Bob is counting down: 1...
 Process Bob finished counting down
 ```
+
+### 9.3 - Python Parallelism in Context
+
+- 01 | Definition
+    - What parallelism realy is, how it offers speed and responsiveness
+- 02 | Current State
+    - How parallelism is being used in today's industry
+- 03 | Considerations
+    - Not all programs can be made parallel
+
+#### Parallelism vs. Concurrency
+
+__Parallelism:__ independent components running separately from each other
+
+__Concurrency:__ components running separately with coordination
+
+#### Parallelism in Today's Industry
+
+__Computer:__ Multi core computers and laptops for smoother processing
+
+__Mobile:__ Multi-core phones, game consoles, Raspberry Pis
+
+__The Web:__ Multi-server websites, servers handle multiple requests simultaneously
+
+__Al & ML:__ GPUs, splitting training data, multi-agent learning
+
+#### Before Applying Parallelism...
+
+* Is the program inherently sequential?
+* Which parts of the program can be made parallel?
+* What is the best number of threads/processes to run in parallel?
