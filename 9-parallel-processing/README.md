@@ -120,3 +120,46 @@ Thread Bob finished
 ### Helpful Resources
 
 [Threading](https://docs.python.org/3/library/threading.html)
+
+### 9.5 - Building a Thread Ping Test
+
+#### Web Requests via A Browser
+
+![Web Requests](web-requests.png)
+
+#### Pinging A Website
+
+![Pinging](pinging-website.png)
+
+#### HTTP Status Codes
+- __1xx (Informational):__ The request was received, continuing processes
+- __2xx (Successful):__ The request was successfully receivedi understood and
+  accepted
+- __3xx (Redirection):__ Further action needs to be taken in order to complete
+  the request
+- __4xx (Client Error):__ The request contains bad syntax or cannot be fulfilled
+- __5xx (Server Error):__ The server failed to fulfill an apparently valid request
+
+#### Commands used in chapters
+```
+python3 ping_sequential.py
+# output
+http://httpstat.us/200:OK
+http://httpstat.us/200?sleep=2000:OK
+http://httpstat.us/404:Not Found
+http://httpstat.us/500?sleep=3000:Internal Server Error
+http://httpstat.us/524:A Timeout Occurred
+
+python3 ping_threading.py
+# output
+http://httpstat.us/524:A Timeout Occurred
+http://httpstat.us/404:Not Found
+http://httpstat.us/200:OK
+http://httpstat.us/200?sleep=2000:OK
+http://httpstat.us/500?sleep=3000:Internal Server Error
+```
+### Helpful Resources
+
+[Python Requests](https://docs.python-requests.org/en/latest/)
+
+[HTTP Status](http://httpstat.us/)
