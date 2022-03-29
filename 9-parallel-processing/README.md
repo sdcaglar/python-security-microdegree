@@ -189,3 +189,20 @@ http://httpstat.us/500?sleep=3000:Internal Server Error
 ### Helpful Resources
 
 [Gilectomy](https://pythoncapi.readthedocs.io/gilectomy.html)
+
+### 9.7 - Multi-Processing in Python
+
+#### Process vs. Programs
+
+__A processes:__ an istance of a program being executed by the operating system
+
+Different instances of a program can be run in seperate processes at the same time
+
+#### Multiprocessing vs. Threading
+
+* A thread is a part of and more lightweight than a process
+* Threading takes place in a common process
+* Multiprocessing involves multiple processes running in seperate processors
+* No coordination between processes
+* Multiprocessing is more expensive than threading
+* No GIL in Multiprocessing
