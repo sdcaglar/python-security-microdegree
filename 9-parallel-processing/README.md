@@ -163,3 +163,29 @@ http://httpstat.us/500?sleep=3000:Internal Server Error
 [Python Requests](https://docs.python-requests.org/en/latest/)
 
 [HTTP Status](http://httpstat.us/)
+
+### 9.6 - The Global Interpreter Lock
+
+#### The GIL CPU-Bound Tasks
+
+* The GIL prevents multiple CPU-bound threads from executing simultaneously
+* A CPU-bound program mostly executes inside the CPU
+* Typically involves heavy computation, also referred to as __"compute-bound"__
+
+#### Commands used in chapters
+```
+ python3 big_countdown_sequential.py
+
+ python3 big_countdown_threading.py
+```
+
+#### Arguments For The GIL
+* Not all threaded programs are affected by the GIL
+    - Sleeping
+    - Waiting for responses from online server
+* Best solution to memory management in Python
+* Responsiveness resulting from threading is still possible
+
+### Helpful Resources
+
+[Gilectomy](https://pythoncapi.readthedocs.io/gilectomy.html)
