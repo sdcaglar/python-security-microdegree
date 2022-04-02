@@ -206,3 +206,34 @@ Different instances of a program can be run in seperate processes at the same ti
 * No coordination between processes
 * Multiprocessing is more expensive than threading
 * No GIL in Multiprocessing
+
+### 9.8 -Building a Multiprocessing Image Processor
+
+#### Computer Images & Pixels
+
+* Each image is a matrix of pixels
+* Each pixel is a single-colored square
+
+
+#### RGB Coloring Scheme
+
+* Each color can be represented as a combination of red, green and blue
+* Each value can range from 0 to 255
+For example:
+- Red: (255, 0, 0)
+- Yellow: (255, 255, 0)
+
+#### Commands used in chapters
+```
+python3 -m venv env
+source env/bin/activate
+pip3 install numpy matplotlib pillow
+python3 img_sequential.py
+
+python3 image_multiproccesing.py
+```
+#### Section Summary
+* Definition: What a process really is, how Multiprocessing is implemented.
+* Image Processing: Making heavy calculations simultaneously via multiprocessing.
+* Example: A quick example in Python.
+* Process Pools: Keeping the number of running processes fixed.
