@@ -269,3 +269,57 @@ python3 counter_lock.py
 # output
 Final counter value: 20
 ```
+
+### 9.10 - The Disadvantages of Using Locks
+
+#### Locks Cause Sequentiality
+
+![Sequentiality](sequentiality.png)
+
+#### The Dining Philosophers Problem
+
+* Each philosopher always alternates between eating and thinking and they go on
+like that forever.
+
+* If a philosopher wants to start eating, he will need to use both forks and a
+fork can only be used by at most one philosopher at a time.
+
+![Philosophers Problem](philosophers-problem.png)
+
+#### A Naive Approach
+
+* Each philosopher picks up his left fork as soon as it becomes available.
+
+* If a philosopher is holding his left fork, he picks up his right fork as soon
+as it becomes available.
+
+* Once a philosopher has both forks, he eats for a specific amount of time and
+places both forks down afterwards.
+
+Problem: Everyone only has his left fork.
+
+#### Starvation
+
+![Starvation](starvation.png)
+
+#### Commands used in chapters
+```
+sample_deadlock.py
+# output
+Task 1 is starting...
+Task 2 is starting...
+Task 2 is waiting to acquire Lock A
+Task 1 is waiting to acquire Lock A
+Task 1 has acquired Lock A
+Task 2 has acquired Lock B
+Task 2 is doing some calculations
+Task 1 is doing some calculations
+Task 1 is waiting to acquire Lock B
+Task 2 is waiting to acquire Lock A
+```
+
+#### Section Summary
+* Definition: What a lock really is, how a lock is implemented.
+* Pros: Avoiding race conditions using locks.
+* Example: A quick example in Python.
+* Cons: Sequentiality, deadlock, starvation.
