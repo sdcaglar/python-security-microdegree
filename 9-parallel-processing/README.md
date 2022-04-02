@@ -207,7 +207,7 @@ Different instances of a program can be run in seperate processes at the same ti
 * Multiprocessing is more expensive than threading
 * No GIL in Multiprocessing
 
-### 9.8 -Building a Multiprocessing Image Processor
+### 9.8 - Building a Multiprocessing Image Processor
 
 #### Computer Images & Pixels
 
@@ -237,3 +237,35 @@ python3 image_multiproccesing.py
 * Image Processing: Making heavy calculations simultaneously via multiprocessing.
 * Example: A quick example in Python.
 * Process Pools: Keeping the number of running processes fixed.
+
+### 9.9 - The Advantages of Using Locks
+
+#### Race Conditions
+
+* Multiple threads interacting with a shared resource at the same time without
+coordination.
+
+* Updates from one thread to the resource might be overwritten by updates from
+another.
+
+![Shared Resource](shared-resource.png)
+
+#### Locks & Their Effects
+
+* Locks are placed on shared resources that are updated by more than one thread.
+
+* Once a lock has been acquired by a thread, no other thread can access the
+corresponding resource until the lock is released.
+
+![Locks](lock.png)
+
+#### Commands used in chapters
+```
+python3 counter_race.py
+# output
+Final counter value: 13
+
+python3 counter_lock.py
+# output
+Final counter value: 20
+```
