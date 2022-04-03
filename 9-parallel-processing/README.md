@@ -392,3 +392,14 @@ python3 scrape_async.py
   and multiprocessing
 * Example: A quick example in Python.
 * Asynchronous web scraping: Making web requests and writing to file asynchronously.
+
+### 9.13 - Concluding Thoughts on Parallel Processing in Python
+
+__Parallelism might already be implemented in libraries__
+
+#### Testing & Debugging
+
+* __Testing:__ Test for many cases (and edge cases) multiples times with multiple
+  methods.
+* __Debugging:__ Debug for isolate sections of a large program, as opposed to
+  the whole program.
