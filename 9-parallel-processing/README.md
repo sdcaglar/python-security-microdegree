@@ -368,3 +368,27 @@ Coroutine Bob is counting down: 2...
 Coroutine Bob is counting down: 1...
 Coroutine Bob finished counting down
 ```
+
+### 9.12 - Building an Asynchronous Web Scraper
+
+__The Idea of Web Scraping__
+![Web Scraping](web-scraping.png)
+
+#### Asynchronous Web Scraping
+![Async Web Scraping](async-web-scraping.png)
+
+#### Commands used in chapters
+```
+pip3 install aiohttp aiofiles requests
+
+python3 scrape_sequential.py
+
+python3 scrape_async.py
+```
+
+#### Section Summary
+* Definition: What asynchronous programming really is.
+* Differences with traditional parallelism: How it is different from threading
+  and multiprocessing
+* Example: A quick example in Python.
+* Asynchronous web scraping: Making web requests and writing to file asynchronously.
