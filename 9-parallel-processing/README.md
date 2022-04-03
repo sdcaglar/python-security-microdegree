@@ -323,3 +323,48 @@ Task 2 is waiting to acquire Lock A
 * Pros: Avoiding race conditions using locks.
 * Example: A quick example in Python.
 * Cons: Sequentiality, deadlock, starvation.
+
+### 9.11 - What is Asynchronous Programming
+
+#### A Naive Strategy in Simultaneous Chess
+* Kasparov takes 3 minutes to make a move.
+* Each oppenent takes 5 minutes to make a move
+* Each match lasts for 20 moves from each player (40 moves in total)
+
+__Sequential approach:__
+
+ (20 moves * 3 minutes + 20 moves * 5 minutes) * 10 oppenents = 1600 minutes
+
+#### No-Waiting Strategy
+Instead of waiting for an oppenent to think about and make his move, Kasparov will
+move simply move on to the next oppenent after making a move.
+
+30 minutes * 20 moves = 10 hours
+
+__Asynchronous Programming: overlapping waiting time and processing time.__
+
+#### Asynchronous Programming in Python
+
+Elements of Asynchronous Programming
+![Asynchronous Programming](async-programming.png)
+
+#### Thread
+![Thread](thread.png)
+
+#### Commands used in chapters
+```
+python3 countdown_async.py
+# output
+Coroutine Alice is counting down: 5...
+Coroutine Bob is counting down: 5...
+Coroutine Alice is counting down: 4...
+Coroutine Alice is counting down: 3...
+Coroutine Bob is counting down: 4...
+Coroutine Alice is counting down: 2...
+Coroutine Alice is counting down: 1...
+Coroutine Alice finished counting down
+Coroutine Bob is counting down: 3...
+Coroutine Bob is counting down: 2...
+Coroutine Bob is counting down: 1...
+Coroutine Bob finished counting down
+```
